@@ -33,3 +33,11 @@ sudo dnf copr enable atim/bottom -y
 sudo dnf install bottom
 
 cd ..
+
+# install AstroNvim
+
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim +PackerSync
