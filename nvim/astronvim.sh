@@ -10,8 +10,9 @@ sudo dnf module list nodejs
 sudo dnf module install nodejs/development
 
 #tree-sitter-cli
-sudo yum install rustc
-sudo yum install cargo
+# sudo yum install rustc
+# sudo yum install cargo
+curl https://sh.rustup.rs -sSf | sh
 sudo cargo install tree-sitter-cli
 # warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
 
