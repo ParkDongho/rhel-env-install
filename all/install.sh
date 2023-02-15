@@ -12,11 +12,10 @@ sudo make -j ${nproc}
 sudo make altinstall 
 sudo rm Python-3.10.8.tgz
 
-# python virtual environment
+# python 3.10 virtual environment
 cd ~/python-app/
 sudo /usr/local/bin/python3.10 -m venv appenv
 source appenv/bin/activate 
-
 ##############################################
 
 
