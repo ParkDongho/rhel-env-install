@@ -25,9 +25,6 @@ sudo cp /usr/local/bin/pip3.10 /usr/local/bin/pip
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo yum install -y neovim python3-neovim
 
-# gcc
-sudo yum install gcc
-sudo yum groupinstall "Development Tools" 
 
 # node.js
 sudo dnf groupinstall "Development Tools"
@@ -36,7 +33,7 @@ sudo dnf module install nodejs/development
 
 # tree-sitter-cli
 sudo yum install cargo
-curl https://sh.rustup.rs -sSf | sh
+rustup update
 cargo install tree-sitter-cli
 # warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
 
