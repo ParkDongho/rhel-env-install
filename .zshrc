@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -112,11 +112,10 @@ source /tools/Xilinx/Vivado/2022.2/settings64.sh
 source /tools/Xilinx/Vitis/2022.2/settings64.sh
 
 # Python
-alias python=python3
-alias pip=pip3
-#alias python="/usr/local/bin/python3.9" 
-#alias python="$HOME/local/bin/python3.10" 
-#export PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
+alias python3="/bin/python3.10"
+alias python="/bin/python3.10"
+alias pip3="~/.local/bin/pip3.10"
+alias pip="~/.local/bin/pip3.10"
 
 # texlive
 export PATH=$PATH:/usr/local/texlive/2022/bin/x86_64-linux
@@ -124,4 +123,10 @@ export MANPATH=$MANPATH/usr/local/texlive/2022/texmf-dist/doc/man
 export INFOPATH=$INFOPATH/usr/local/texlive/2022/texmf-dist/doc/info
 
 # Coursier
-alias cs="./.local/share/applications/coursier"
+# alias cs="/bin/coursier"
+
+# Jupyter
+export PATH="$HOME/.local/bin:$PATH"
+
+# sudo PATH
+alias sudo='sudo env PATH=$PATH'
