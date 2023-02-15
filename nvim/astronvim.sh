@@ -10,7 +10,6 @@ sudo dnf module list nodejs
 sudo dnf module install nodejs/development
 
 # tree-sitter-cli
-# sudo yum install rustc
 sudo yum install cargo
 # curl https://sh.rustup.rs -sSf | sh
 cargo install tree-sitter-cli
