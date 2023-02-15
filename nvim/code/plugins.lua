@@ -319,9 +319,12 @@ local astro_plugins = {
     setup = function() astronvim.lazy_load_commands("neovim-session-manager", "SessionManager") end,
     config = function() require "configs.session_manager" end,
   },
-  
+
   -- Scala Language Server
-  ["scalameta/nvim-metals"] = {},
+  ["scalameta/nvim-metals"] = {
+    requires = { { "nvim-lua/plenary.nvim", module = "plenary" } },
+    config = function() require "configs.nvim-metals" end,
+  },
 }
 
 if astronvim.updater.snapshot then

@@ -5,7 +5,7 @@ sudo yum groupinstall "Development Tools"
 #install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# python 3.10
+# python 3.10 #######################
 wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz
 tar xzf Python-3.10.8.tgz
 cd Python-3.10.8
@@ -17,27 +17,28 @@ sudo cp /usr/local/bin/python3.10 /usr/local/bin/python3
 sudo cp /usr/local/bin/pip3.10 /usr/local/bin/pip3
 sudo cp /usr/local/bin/python3.10 /usr/local/bin/python
 sudo cp /usr/local/bin/pip3.10 /usr/local/bin/pip
-# /usr/local/bin
 
 
 
-# nvim
+
+# nvim #######################
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo yum install -y neovim python3-neovim
 
+# AstroNvim ################
 
-# node.js
+# node.js ##
 sudo dnf groupinstall "Development Tools"
 sudo dnf module list nodejs
 sudo dnf module install nodejs/development
 
-# tree-sitter-cli
+# tree-sitter-cli ##
 sudo yum install cargo
 rustup update
 cargo install tree-sitter-cli
-# warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
 
-# ripgrep
+
+# ripgrep ##
 sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
 sudo yum install ripgrep
 
@@ -56,10 +57,29 @@ sudo dnf install bottom
 
 cd ..
 
-# install AstroNvim
-
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim +PackerSync
+
+# Chisel #################
+
+#install java
+#sudo yum install default-jdk
+sudo dnf install langpacks-en glibc-all-langpacks -y
+sudo yum install java-1.8.0-openjdk-devel -y
+
+
+#install sbt
+mkdir tmp && cd tmp
+sudo rm -f /etc/yum.repos.d/bintray-rpm.repo || true
+curl -L https://www.scala-sbt.org/sbt-rpm.repo > sbt-rpm.repo
+sudo mv sbt-rpm.repo /etc/yum.repos.d/
+sudo yum install sbt
+cd .. && rm -rf tmp
+
+
+# install verilator
+sudo yum install verilator -y
+
