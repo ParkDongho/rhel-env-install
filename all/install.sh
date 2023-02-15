@@ -4,6 +4,7 @@ sudo yum groupinstall "Development Tools"
 sudo dnf install wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel
 
 # python 3.10 ################################
+#
 wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz
 tar xzf Python-3.10.8.tgz
 cd Python-3.10.8
@@ -16,4 +17,5 @@ sudo rm Python-3.10.8.tgz
 cd ~/python-app/
 sudo /usr/local/bin/python3.10 -m venv appenv
 source appenv/bin/activate 
+#
 ##############################################
